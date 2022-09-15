@@ -1,0 +1,115 @@
+Name: [carver_work]
+Vnum: [1144]
+Code flags: [none]
+Code:
+if hour == 7
+or hour == 8
+and room $i == 1174
+say I'll take some meat to the grocer.
+mob force butcher give 2*bacon carver
+mob force butcher give 2*sausage carver
+mob force butcher give steak carver
+mob force butcher give leg carver
+mob force butcher give chop carver
+east
+south
+south
+south
+south
+south
+give all grocer
+say there's your meat for the day.
+north
+north
+north
+north
+west
+north
+else
+if hour == 9
+or hour == 10
+and room $i == 1142
+   if mobhere cow
+  and dow == 2
+   say hold still you walking steak.
+   mob damage cow 400 800 lethal
+   mob opurge corpse
+   emote gets a corpse.
+   mob oload 1145
+south
+east
+north
+west
+give dead butcher
+mob force butcher put dead bag eq
+say there's our beef.
+else
+mob zecho $I yells 'Where's our beef?'
+south
+east
+north
+west
+grumble
+endif
+else
+if hour == 12
+or hour == 11
+and room $i == 1174
+say I'll take some meat to the inn and baker.
+mob force butcher give skinn carver
+mob force butcher give roast carver
+mob force butcher give rib carver
+mob force butcher give chop carver
+east
+south
+south
+east
+give roast innkeep
+give chop innkeep
+give rib innkeep
+say there's some meat for the dinner tonight.
+mob goto 1172
+emote has arrived.
+give skinn baker
+mob force baker put skinn bag eq
+emote leaves south.
+mob goto 1144
+else
+if hour == 14
+or hour == 13
+and room $i == 1144
+say better get back to the shop.
+mob force innkeep give egg carver
+eat egg
+smile
+west
+north
+west
+north
+north
+else
+if hour == 16
+or hour == 15
+and room $i == 1143
+and mobhere chicken
+say here chicky chicky chicky!
+mob damage chicken 400 800 lethal
+get corpse
+mob oload 1144
+south
+south
+east
+north
+west
+give dead butcher
+mob force butcher put dead bag eq
+mob force butcher give leg carver
+mob force butcher eat leg
+mob force butcher eat cookie
+eat leg
+say time to go home yet?
+endif
+endif
+endif
+endif
+endif
