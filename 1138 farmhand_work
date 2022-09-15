@@ -1,0 +1,97 @@
+if hour == 6
+or hour == 7
+or hour == 10
+or hour == 11
+or hour == 14
+or hour == 15
+or hour == 18
+or hour == 19
+and room $i == 1141
+say time to check the eggs.
+south
+east
+north
+north
+north
+   if objhere 1002
+   beam
+   say good job, chicks!
+   get all.egg
+   else
+   scowl
+   say get to work! We need eggs!
+   endif
+south
+south
+south
+west
+north
+give all.egg gamgee
+south
+else
+if hour == 16
+or hour == 17
+and room $i == 1140
+say time to get some ham and bacon.
+east
+if mobhere pig
+mob damage pig 400 800 lethal
+get corpse
+mob junk corpse
+mob oload 1146
+else
+mob zecho $I yells 'Where are the damn pigs?'
+endif
+west
+north
+give pig helper
+drop all
+else
+if hour == 8
+or hour == 9
+and room $i == 1140
+say Time to get some milk.
+east
+north
+north
+if mobhere cow
+emote works behind the cows for a few minutes.
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+mob oload 1250
+else
+mob zecho $I yells 'Where are the damn cows?'
+endif
+south
+south
+west
+north
+give all.milk gamgee
+else
+if hour == 12
+or hour == 13
+and room $i == 1140
+say Lunchtime!
+north
+mob force gamgee give egg hand
+mob force gamgee give milk hand
+emote drinks some milk and eats an egg then burps.
+mob junk milk
+mob junk egg
+mob force gamgee eat egg
+smile
+endif
+endif
+endif
+endif

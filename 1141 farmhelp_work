@@ -1,0 +1,140 @@
+if carries $i pig
+or objhere pig
+get pig
+say Ok, I'll take this to the butcher.
+south
+east
+north
+east
+north
+west
+if mobhere butcher
+give pig butcher
+say there's your meat.
+mob force butcher put dead bag eq
+endif
+east
+south
+west
+south
+west
+north
+say Done.
+else
+if hour == 10
+or hour == 11
+and room $i == 1141
+say I'll go make some butter.
+mob force gamgee give 3*milk helper
+south
+east
+north
+else
+if hour == 12
+or hour == 11
+and room $i == 1138
+and carries $i 1250
+emote churns some butter.
+mob junk milk
+mob oload 1028
+mob oload 1028
+else
+if hour == 13
+or hour == 14
+and room $i == 1138
+say lunchtime!
+south
+west
+north
+if mobhere gamgee
+give all gamgee
+mob force gamgee give egg helper
+mob force gamgee give milk helper
+emote drinks some milk and eats an egg then sighs contentedly.
+mob junk egg
+mob junk milk
+endif
+else
+if hour == 14
+or hour == 15
+and room $i == 1141
+say I'll take some supplies to the baker.
+mob force gamgee give 6*milk helper
+mob force gamgee give 12*egg helper
+mob force gamgee give 6*butter helper
+mob echo $I leaves south.
+mob goto 1172
+mob echo $I has arrived.
+give all baker
+mob force baker put all.milk bag eq
+mob force baker put all.egg bag eq
+mob force baker put all.butter bag eq
+south
+mob goto 1139
+mob echo $I has arrived.
+west
+else
+if hour == 16
+or hour == 17
+and room $i == 1140
+say chicken. Chicken to the butcher. Almost forgot.
+east
+north
+north
+north
+   if mobhere chicken
+   mob damage chicken 400 800 lethal
+   get corpse
+drop feather
+   mob junk corpse
+   mob oload 1144
+south
+   south
+   east
+   north
+   west
+if mobhere butcher
+give hen butcher
+mob force butcher put dead bag eq
+   say there's your chicken.
+   east
+   south
+   west
+endif
+   else
+   mob zecho $I yells 'Where are all the damn chickens?'
+south
+   south
+   endif
+south
+west
+north
+else
+if hour == 7
+and room $i == 1141
+say I'll take some supplies to the grocer.
+mob force gamgee give 4*milk helper
+mob force gamgee give 2*egg helper
+mob force gamgee give 1*butter helper
+mob echo $I leaves south.
+mob goto 1121
+mob echo $I has arrived.
+give all grocer
+say there's some goods for you.
+mob echo $I leaves north.
+mob goto 1140
+mob echo $I has arrived.
+else
+if hour == 8
+or hour == 9
+and room $i == 1140
+say I'd better check in.
+north
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
