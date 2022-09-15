@@ -35,9 +35,8 @@ and room $i == 1140
 say time to get some ham and bacon.
 east
 if mobhere pig
-mob damage pig 400 800 lethal
-get corpse
-mob junk corpse
+emote efficiently stuns and then slaughters a pig.
+mob mpurge pig
 mob oload 1146
 else
 mob zecho $I yells 'Where are the damn pigs?'

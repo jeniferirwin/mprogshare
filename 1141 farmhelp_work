@@ -83,10 +83,10 @@ north
 north
 north
    if mobhere chicken
-   mob damage chicken 400 800 lethal
-   get corpse
-drop feather
-   mob junk corpse
+   emote slices a chicken's head off in one swift blow.
+   mob mpurge chicken
+   mob oload 1766
+   drop feather
    mob oload 1144
 south
    south
