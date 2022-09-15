@@ -28,9 +28,9 @@ and room $i == 1142
    if mobhere cow
   and dow == 2
    say hold still you walking steak.
-   mob damage cow 400 800 lethal
-   mob opurge corpse
-   emote gets a corpse.
+   emote deftly administers a lethal slash to the cow's throat.
+   mob mpurge cow
+   emote drags the corpse off.
    mob oload 1145
 south
 east
@@ -89,8 +89,8 @@ or hour == 15
 and room $i == 1143
 and mobhere chicken
 say here chicky chicky chicky!
-mob damage chicken 400 800 lethal
-get corpse
+emote briskly lops a chicken's head off, then picks up the body.
+mob mpurge chicken
 mob oload 1144
 south
 south
